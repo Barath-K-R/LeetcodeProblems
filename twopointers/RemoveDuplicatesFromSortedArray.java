@@ -1,3 +1,4 @@
+package twopointers;
 public class RemoveDuplicatesFromSortedArray {
     public static int removeDuplicates(int[] nums) {
         int l=0,r=0,max=Integer.MIN_VALUE,count=0;;

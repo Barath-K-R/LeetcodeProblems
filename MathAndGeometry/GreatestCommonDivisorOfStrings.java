@@ -1,7 +1,8 @@
 package MathAndGeometry;
 
 public class GreatestCommonDivisorOfStrings {
-    public static String gcdOfStrings(String str1, String str2) {
+
+	public static String gcdOfStrings(String str1, String str2) {
         String smallString=str1.length()<str2.length()?str1:str2;
         StringBuilder sb1=new StringBuilder(),sb2=new StringBuilder();
         for(int i=smallString.length()-1;i>=0;--i){
@@ -18,8 +19,9 @@ public class GreatestCommonDivisorOfStrings {
         }
         return "";
     }
-    public static void main(String[] args) {
-        String str1="LEET",str2="CODE";
+	public static void main(String[] args) {
+		String str1="ABCABC",str2="ABC";
         System.out.println(gcdOfStrings(str1, str2));
-    }
+	}
+
 }

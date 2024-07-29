@@ -1,4 +1,4 @@
-
+package twopointers;
 public class MergeStringsAlternatively {
     public static String mergeAlternately(String word1, String word2) {
         String res = "";

@@ -1,7 +1,8 @@
 package MathAndGeometry;
 
 public class LargestOddNumberInString {
-    public static String largestOddNumber(String num) {
+
+	public static String largestOddNumber(String num) {
         for(int i=num.length()-1;i>=0;--i){
             String temp=num.substring(i,i+1);
             if(Integer.parseInt(temp)%2!=0)
@@ -9,8 +10,10 @@ public class LargestOddNumberInString {
         }
         return "";
     }
-    public static void main(String[] args) {
-        String num="246802";
-        System.out.println(largestOddNumber(num));
-    }
+	public static void main(String[] args) {
+		String num="35427";
+		System.out.println(largestOddNumber(num));
+
+	}
+
 }

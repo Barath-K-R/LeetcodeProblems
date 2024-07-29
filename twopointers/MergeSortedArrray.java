@@ -1,3 +1,4 @@
+package twopointers;
 public class MergeSortedArrray {
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
         int p1 = n - 1, p2 = m - 1;

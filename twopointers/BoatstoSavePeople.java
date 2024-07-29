@@ -1,3 +1,5 @@
+package twopointers;
+
 import java.util.Arrays;
 
 public class BoatstoSavePeople {
