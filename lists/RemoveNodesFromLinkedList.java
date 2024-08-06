@@ -21,16 +21,17 @@ public class RemoveNodesFromLinkedList {
         }
     }
     public static ListNode removeNodes(ListNode head) {
-        ListNode start=reverse(head);
-        while(start.next!=null){
-            if(start.val>start.next.val){
-                start.next=start.next.next;
+        ListNode start=reverse(head),temp=start;
+        while(temp.next!=null){
+            System.out.println("start " +temp.val+" "+temp.next.val);
+            if(temp.val>temp.next.val){
+                temp.next=temp.next.next;
                 continue;
             }
-            start=start.next;
+            temp=temp.next;
         }
-        System.out.println(start.val);
-        return start;
+        
+        return reverse(start);
     }
     public static ListNode reverse(ListNode head){
         ListNode prev=null,curr=head,temp=null;
@@ -40,6 +41,7 @@ public class RemoveNodesFromLinkedList {
             prev=curr;
             curr=temp;
         }
+
         return prev;
     }
     public static void main(String[] args) {
@@ -49,6 +51,11 @@ public class RemoveNodesFromLinkedList {
         list1.next.next.next = new ListNode(3);
         list1.next.next.next.next = new ListNode(8);
         ListNode res=removeNodes(list1);
+        
+        while(res.next!=null){
+            System.out.println(res.val);
+            res=res.next;
+        }
         
 
     }
