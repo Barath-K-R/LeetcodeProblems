@@ -15,7 +15,7 @@ public class LengthOfTheLastWord {
     }
 
     public static void main(String[] args) {
-        String s = "luffy is still joyboy";
+        String s = "luffy is still joybo";
         System.out.println(lengthOfLastWord(s));
     }
 }

@@ -30,6 +30,6 @@ public class IntersectionOfArrays {
         int []nums1={4,9,5},nums2={9,4,9,8,4};
         int[]res=intersection(nums1, nums2);
         for(int n:res)
-        System.out.println(n);
+        System.out.print(n+" ");
     }
 }
