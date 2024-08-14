@@ -7,7 +7,7 @@ public class ConcatenationOfArray {
         for (int i = 0; i < nums.length; ++i) {
             res[left] = res[right] = nums[i];
             left++;
-            right++;
+            right++; 
         }
 
         return res;
@@ -17,7 +17,7 @@ public class ConcatenationOfArray {
         int[] nums = { 1, 2, 1 };
         int[] res = getConcatenation(nums);
         for (int n : res) {
-            System.out.println(n);
+            System.out.print(n+" ");
         }
     }
 }
