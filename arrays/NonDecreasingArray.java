@@ -7,23 +7,24 @@ import java.util.Stack;
  */
 public class NonDecreasingArray {
     public static boolean checkPossibility(int[] nums) {
-        Stack<Integer>st=new Stack<>();
-        int count=0;
-        for(int i=0;i<nums.length;++i){
-            if(!st.isEmpty() && nums[i]<st.peek())
-            count++;
-            
-            
-            st.push(nums[i]);
-            if(count>1)
-            return false;
-        
+        boolean changed=false;
+        for(int i=0;i<nums.length-1;++i){
+           if(nums[i]<=nums[i+1])
+           continue;
+           if(changed) 
+           return false;
+
+           if(nums[i+1]>nums[i-1])
+           nums[i]=nums[i+1];
+           else
+           nums[i+1]=nums[i];
+           changed=true;
         }
-        System.out.println(count);
+        
         return true;
     }
     public static void main(String[] args) {
-        int[]nums={4,2,1};
+        int[]nums={3,4,2,3};
         System.out.println(checkPossibility(nums));
 
     }
