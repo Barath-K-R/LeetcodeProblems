@@ -1,5 +1,5 @@
-package arrays;
 
+package arrays;
 public class CanPlaceFlowers {
 
     public static boolean canPlaceFlowers(int[] a, int n) {
