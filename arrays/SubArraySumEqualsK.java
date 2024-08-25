@@ -1,51 +1,31 @@
 package arrays;
 
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * SubArraySumEqualsK
  */
 public class SubArraySumEqualsK {
     public static int subarraySum(int[] nums, int k) {
-        int count=0,l=0,r=0,currsum=nums[0];
-        while(l<nums.length){
-            System.out.println("sum="+currsum);
-            System.out.println(l+" "+r);
-            if(r<l)
-            r=l;
-            if(currsum>=k){
-                if(currsum==k)
-                count++;
-                currsum=updateSum(currsum, nums[l]);
-                l++;
-            }
-            else{
-                
-                if(r<nums.length-1){
-                    r++;
-                    currsum+=nums[r];
-                }
-                else{
-                    currsum=updateSum(currsum, nums[l]);
-                    l++;
-                }
-            }
+        HashMap<Integer,Integer>map=new HashMap<>();
+        int sum=0,count=0;
+        map.put(0,1);
+        for(int i=0;i<nums.length;++i){
+            sum+=nums[i];
+            if(map.containsKey(sum-k))
+            count+=map.get(sum-k);
+            
+            //adding prefix sum to map
+            if(map.containsKey(sum))
+            map.put(sum,map.get(sum)+1);
+            else
+            map.put(sum,1);
         }
         return count;
     }
-
-    public static int updateSum(int currsum,int left){
-        System.out.println(currsum+"  "+left );
-         if(left<0){
-            currsum=currsum+Math.abs(left);
-         }
-         else
-         currsum-=left;
-         return currsum;
-    }
     public static void main(String[] args) {
-          int[]nums={-1,-1,1};
-          int k=0;
+          int[]nums={1,2,3};
+          int k=3;
           System.out.println(subarraySum(nums, k));
     }
     
