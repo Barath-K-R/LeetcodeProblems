@@ -3,19 +3,18 @@ package Tree;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InOrderTraversal {
-    public static List<Integer> inorderTraversal(TreeNode root) {
+public class PostOrderTraversal {
+    public static List<Integer> postorderTraversal(TreeNode root) {
         List<Integer>list=new ArrayList<>();
         dfs(root,list);
         return list;
     }
-
     public static void dfs(TreeNode n,List<Integer>list){
         if(n==null)
         return;
 
-        dfs(n.left,list);
         list.add(n.data);
+        dfs(n.left,list);
         dfs(n.right,list);
 
     }
@@ -35,7 +34,7 @@ public class InOrderTraversal {
         root.left.right=new TreeNode(2);
         root.right.left=new TreeNode(3);
         root.right.right=new TreeNode(4);
-        List<Integer>res=inorderTraversal(root);
+        List<Integer>res=postorderTraversal(root);
         System.out.println(res);
     }
 }
