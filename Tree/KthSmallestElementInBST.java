@@ -1,12 +1,12 @@
 package Tree;
 
-import java.util.Collection;
+
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-import Tree.MaximumDepthOfBinaryTree.TreeNode;
+
 
 public class KthSmallestElementInBST {
 
@@ -50,7 +50,7 @@ public class KthSmallestElementInBST {
 	}
 	
 	public static void bfs(TreeNode root) {
-		Queue q=new LinkedList<TreeNode>();
+		Queue<TreeNode>q=new LinkedList<>();
 		q.add(root);
 		
 		while(!q.isEmpty())
