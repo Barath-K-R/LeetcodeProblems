@@ -2,29 +2,22 @@ package twopointers;
 
 public class SortArrayByParity {
     public static int[] sortArrayByParity(int[] nums) {
-        System.out.println("sorting");
-        int l=0,r=nums.length-1;
-        while(l<r){
-            boolean lodd=nums[l]%2!=0?true:false,rodd=nums[r]%2!=0?true:false;
-            if(lodd && !rodd){
+        int l=0,r=0;
+        while(r<nums.length){
+            if(nums[r]%2==0){
+               
                 int temp=nums[l];
                 nums[l]=nums[r];
                 nums[r]=temp;
-            }
-            else if(lodd && rodd)
-            r--;
-            else if(!lodd && !rodd)
-            l++;
-            else
-            {
                 l++;
-                r--;
             }
+            r++;
         }
+        
         return nums;
     }
     public static void main(String[] args) {
-        int[]nums={0};
+        int[]nums={3,1,2,4};
         sortArrayByParity(nums);
         for(int n:nums)
         System.out.println(n);
