@@ -5,21 +5,29 @@ import java.util.*;
  */
 public class practise {
 
-    public static void recursion(int[]arr,int i,List<Integer>curr,List<Integer> res,int sum,int k){
-        if(sum==k)
-            res.addAll(curr); 
-        if(i>=arr.length)
-            return;
-        curr.add(arr[i]);
-        recursion(arr, i+1, curr, res, sum+arr[i], k);
-        curr.remove(arr[i]);
-        recursion(arr, i+1, curr, res, sum, k);
+    public static int recursion(int[] nums) {
+        int l = 1, r = 1, last = nums[0], count = 1;
+        while (r < nums.length) {
+            if (nums[r] == last && count < 2) {
+                count++;
+                nums[l] = nums[r];
+                l++;
+            } else if (nums[r] != last) {
+                last = nums[r];
+                count = 1;
+                nums[l] = nums[r];
+                l++;
+            }
+            r++;
 
+        }
+        return l;
     }
+
     public static void main(String[] args) {
-        List<Integer>res=new ArrayList<>(),curr=new ArrayList<>();
-        int[]arr={3,1,2};
-        recursion(arr,0,curr,res,0,4);
-        System.out.println(res);
+        int[] nums = { 0, 0, 1, 1, 1, 1, 2, 3, 3 };
+        recursion(nums);
+        for (int n : nums)
+            System.out.println(n);
     }
 }

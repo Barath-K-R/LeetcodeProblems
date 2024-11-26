@@ -1,27 +1,24 @@
 package twopointers;
 public class MoveZeroes {
     public static void moveZeroes(int[] nums) {
-        int r = 0;
-        for (int i = 0; i < nums.length; ++i) {
-            if (nums[i] == 0) {
-               
-                r = i + 1;
-                while (r < nums.length && nums[r] == 0) {
-                    r++;
-                }
-                
-                if (r < nums.length) {
-                    int temp = nums[i];
-                    nums[i] = nums[r];
-                    nums[r] = temp;
-                }
+        int i=0,j=0;
+        while(j<nums.length){
+            if(nums[j]!=0){
+                int a=nums[i];
+                nums[i]=nums[j];
+                nums[j]=a;
+                i++;j++;
             }
+            else
+              j++;
         }
        
     }
 
     public static void main(String[] args) {
-        int[] nums = { 0 };
+        int[] nums = {0,1,0,3,12};
         moveZeroes(nums);
+        for(int n:nums)
+        System.out.println(n);
     }
 }
