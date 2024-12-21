@@ -1,33 +1,20 @@
-import java.util.*;
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Stack;
+import java.lang.reflect.AccessibleObject;
 /**
  * practise
  */
 public class practise {
 
-    public static int recursion(int[] nums) {
-        int l = 1, r = 1, last = nums[0], count = 1;
-        while (r < nums.length) {
-            if (nums[r] == last && count < 2) {
-                count++;
-                nums[l] = nums[r];
-                l++;
-            } else if (nums[r] != last) {
-                last = nums[r];
-                count = 1;
-                nums[l] = nums[r];
-                l++;
-            }
-            r++;
-
-        }
-        return l;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = { 0, 0, 1, 1, 1, 1, 2, 3, 3 };
-        recursion(nums);
-        for (int n : nums)
-            System.out.println(n);
-    }
+public static void main(String[] args) {
+     int[]heights={2,1,5,6,2,3};
+     
+}
 }
