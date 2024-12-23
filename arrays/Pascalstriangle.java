@@ -1,25 +1,23 @@
-package arrays;
+	package arrays;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Pascalstriangle {
 	public static List<List<Integer>> generate(int numRows) {
-	    List<List<Integer>> res = new ArrayList<>();
-	    ArrayList<Integer> prev = new ArrayList<>();
-	    for(int i = 0; i < numRows; ++i) {
-	        ArrayList<Integer> curr = new ArrayList<>();
-	        curr.add(1);
-	        if(i > 0)
-	            curr.add(1);
-	        for(int j = 1; j < prev.size(); ++j) {
-	            int sum = prev.get(j) + prev.get(j - 1);
-	            curr.add(j, sum);
-	        }
-	        res.add(curr);
-	        prev = curr;
-	    }
-	    return res;
+		List<List<Integer>> res = new ArrayList<>();
+		for(int i=0;i<numRows;++i){
+			List<Integer>list=new ArrayList<>();
+			list.add(1);
+			for(int j=1;j<i;++j){
+			  int value=res.get(i-1).get(j-1)+res.get(i-1).get(j);
+			  list.add(value);
+			}
+			if(i!=0)
+			list.add(1);
+			res.add(list);
+		}
+		return res;
 	}
 
     public static void main(String[] args) {
