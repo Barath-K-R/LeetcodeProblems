@@ -5,31 +5,24 @@ import java.util.*;
 public class HappyNumbers {
 
 	public static boolean happynumber(int n) {
-		ArrayList<Integer> s=new ArrayList<Integer>();
-		int sum=0;
-		while(sum!=1)
-		{
-			sum=0;
-		while(n>0) {
-			int digit=n%10;
-			sum=sum+(int)Math.pow(digit, 2);
-			n=n/10;
+		Set<Integer> set = new HashSet<>();
+		while (!set.contains(n)) {
+			set.add(n);
+			int sum = 0;
+			while (n != 0) {
+				sum = sum + ((n % 10) * (n % 10));
+				n = n / 10;
+			}
+			if (sum == 1)
+				return true;
+			n = sum;
 		}
-		System.out.println(sum);
-		if(!s.contains(sum))
-		s.add(sum);
-		else
-		{
-			System.out.println("repaeted "+sum);
-			return false;
-		}
-		n=sum;
-		}
-		return true;
+		return false;
 	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int n=19;
+		int n = 192;
 		System.out.println(happynumber(n));
 
 	}
